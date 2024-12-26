@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск товаров</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background-color: #343a40;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .search-bar {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .search-bar input {
+            width: 80%;
+            max-width: 500px;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .product-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .product-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .product-item .product-info {
+            padding: 1rem;
+            text-align: center;
+        }
+        .product-item .product-info h3 {
+            margin: 0.5rem 0;
+            font-size: 1.25rem;
+        }
+        .product-item .product-info p {
+            margin: 0.5rem 0;
+            color: #555;
+        }
+        .product-item .product-info .price {
+            font-weight: bold;
+            color: #007bff;
+            margin: 1rem 0;
+        }
+        .product-item .product-info button {
+            padding: 0.5rem 1rem;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .product-item .product-info button:hover {
+            background-color: #218838;
+        }
+    </style>
+    <script>
+        function searchProducts() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const products = document.querySelectorAll('.product-item');
+
+            products.forEach(product => {
+                const title = product.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(query)) {
+                    product.style.display = '';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Поиск товаров</h1>
+    </header>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="search-input" onkeyup="searchProducts()" placeholder="Введите название книги для поиска...">
+        </div>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="https://cdn1.ozone.ru/s3/multimedia-9/6620344713.jpg" alt="Книга 1">
+                <div class="product-info">
+                    <h3>Человек-бензопила,все части</h3>
+                    <p>Автор:Тацуки Фудзимото</p>
+                    <p class="price">1000-2000 сом</p>
+                    <button>Добавить в корзину</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="https://hobbypark.kg/upload/iblock/f3e/zj3fdiv2s2lvnayj2dyntfkoo8t5ailk.jpg" alt="Книга 2">
+                <div class="product-info">
+                    <h3>Гравити Фолз 3 дневник</h3>
+                    <p>Автор:Алекс Хирш и Роб Рензетти</p>
+                    <p class="price">2500 сом</p>
+                    <button>Добавить в корзину</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="https://basket-02.wbbasket.ru/vol157/part15790/15790805/images/big/1.webp" alt="Книга 3">
+                <div class="product-info">
+                    <h3>Особое мясо</h3>
+                    <p>Автор:Агустина Бастеррика</p>
+                    <p class="price">850сом</p>
+                    <button>Добавить в корзину</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/c14b0c66-3329-4daf-ab9c-c3223bd3c915/600x900" alt="Книга 4">
+                <div class="product-info">
+                    <h3>Дом странных детей</h3>
+                    <p>Автор:Ренсом Риггз</p>
+                    <p class="price">900 сом</p>
+                    <button>Добавить в корзину</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

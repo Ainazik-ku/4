@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background-color: #343a40;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .portfolio-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .portfolio-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .portfolio-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .portfolio-item .item-info {
+            padding: 1rem;
+            text-align: center;
+        }
+        .portfolio-item .item-info h3 {
+            margin: 0.5rem 0;
+            font-size: 1.25rem;
+        }
+        .portfolio-item .item-info p {
+            margin: 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Каталог</h1>
+    </header>
+    <div class="container">
+        <h2>Наши книги</h2>
+        <div class="portfolio-gallery">
+            <div class="portfolio-item">
+                <img src="https://imo10.labirint.ru/books/600284/cover.jpg/242-0" alt="Книга 1">
+                <div class="item-info">
+                    <h3>Оно</h3>
+                    <p>Автор:Стивен Кинг</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://imo10.labirint.ru/books/438848/cover.jpg/220-0" alt="Книга 2">
+                <div class="item-info">
+                    <h3>Коралина</h3>
+                    <p>Автор:Нил Гейман</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWaUQ5-9ZkIOmV3Lf68kH6lyStLtSPwsr5_w&s" alt="Книга 3">
+                <div class="item-info">
+                    <h3>Бойцовский клуб</h3>
+                    <p>Автор:Чак Паланик</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://static.insales-cdn.com/r/wAHOjVT2124/rs:fit:1000:0:1/q:100/plain/images/products/1/4766/579809950/cover1__w820.jpg@jpg" alt="Книга 4">
+                <div class="item-info">
+                    <h3>Немой свидетель</h3>
+                    <p>Автор:Агата Кристи</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
